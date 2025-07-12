@@ -1,85 +1,321 @@
+Com certeza! Vamos criar uma calculadora simples usando HTML para a estrutura, CSS para o estilo e JavaScript para a lógica de funcionamento.
+
+### 1. Estrutura HTML (index.html)
+
+Crie um arquivo chamado `index.html`:
+
 ```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matrix Interface</title>
-    <style>
-        body {
-            background-color: black;
-            color: #00FF00; /* Verde brilhante para o efeito Matrix */
-            font-family: 'Courier New', Courier, monospace; /* Fonte monoespaçada para estilo Matrix */
-            text-align: center; /* Centraliza todo o conteúdo */
-            margin: 0;
-            padding: 50px 20px; /* Adiciona espaçamento interno */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh; /* Garante que a página ocupe toda a altura da viewport */
-            box-sizing: border-box; /* Inclui padding na dimensão total do elemento */
-        }
-
-        h1 {
-            font-size: 3em;
-            text-shadow: 0 0 10px #00FF00; /* Efeito de brilho verde no título */
-            margin-bottom: 20px;
-        }
-
-        p {
-            font-size: 1.5em;
-            margin-bottom: 40px; /* Espaço entre o parágrafo e os botões */
-            max-width: 800px; /* Limita a largura do parágrafo para legibilidade */
-        }
-
-        .button-container {
-            display: flex;
-            gap: 30px; /* Espaço entre os botões */
-        }
-
-        button {
-            padding: 15px 30px;
-            border: none;
-            color: white; /* Texto branco para legibilidade dos botões */
-            font-size: 1.2em;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* Transições suaves */
-        }
-
-        .button-sim {
-            background-color: #0000CC; /* Azul escuro */
-            box-shadow: 0 0 10px #0000CC; /* Sombra azul */
-        }
-
-        .button-nao {
-            background-color: #CC0000; /* Vermelho escuro */
-            box-shadow: 0 0 10px #CC0000; /* Sombra vermelha */
-        }
-
-        button:hover {
-            transform: scale(1.05); /* Leve aumento ao passar o mouse */
-        }
-
-        .button-sim:hover {
-            background-color: #0000FF; /* Azul mais claro ao passar o mouse */
-            box-shadow: 0 0 15px #0000FF;
-        }
-
-        .button-nao:hover {
-            background-color: #FF0000; /* Vermelho mais claro ao passar o mouse */
-            box-shadow: 0 0 15px #FF0000;
-        }
-    </style>
+    <title>Calculadora HTML</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Eu evoluí!</h1>
-    <p>eu sou um agente que obedece a um chat.</p>
-    <div class="button-container">
-        <button class="button-sim">SIM</button>
-        <button class="button-nao">NÃO</button>
+    <div class="calculator">
+        <input type="text" class="display" readonly>
+        <div class="buttons">
+            <button class="btn clear">AC</button>
+            <button class="btn operator">÷</button>
+            <button class="btn operator">×</button>
+            <button class="btn backspace">DEL</button>
+
+            <button class="btn number">7</button>
+            <button class="btn number">8</button>
+            <button class="btn number">9</button>
+            <button class="btn operator">-</button>
+
+            <button class="btn number">4</button>
+            <button class="btn number">5</button>
+            <button class="btn number">6</button>
+            <button class="btn operator">+</button>
+
+            <button class="btn number">1</button>
+            <button class="btn number">2</button>
+            <button class="btn number">3</button>
+            <button class="btn decimal">.</button>
+            
+            <button class="btn number zero">0</button>
+            <button class="btn equals">=</button>
+        </div>
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
 ```
+
+### 2. Estilo CSS (style.css)
+
+Crie um arquivo chamado `style.css` na mesma pasta do `index.html`:
+
+```css
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f2f5;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+}
+
+.calculator {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    width: 300px;
+}
+
+.display {
+    width: calc(100% - 20px); /* Ajusta para preencher a largura */
+    height: 60px;
+    background-color: #444;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    color: #fff;
+    text-align: right;
+    padding: 0 10px;
+    box-sizing: border-box; /* Garante que padding não estoure a largura */
+    overflow: hidden; /* Evita que números muito grandes quebrem o layout */
+    text-overflow: ellipsis; /* Adiciona '...' se o texto for muito longo */
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.btn {
+    width: 100%;
+    height: 60px;
+    font-size: 1.8em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    color: #fff;
+    background-color: #555;
+}
+
+.btn:hover {
+    background-color: #777;
+    transform: translateY(-2px);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn.operator,
+.btn.equals {
+    background-color: #ff9800; /* Laranja para operadores e igual */
+}
+
+.btn.operator:hover,
+.btn.equals:hover {
+    background-color: #e68900;
+}
+
+.btn.clear {
+    background-color: #f44336; /* Vermelho para AC */
+    grid-column: span 1; /* AC ocupa 1 coluna */
+}
+
+.btn.clear:hover {
+    background-color: #d32f2f;
+}
+
+.btn.backspace {
+    background-color: #607d8b; /* Azul acinzentado para DEL */
+}
+
+.btn.backspace:hover {
+    background-color: #455a64;
+}
+
+.btn.zero {
+    grid-column: span 2; /* O botão '0' ocupa 2 colunas */
+}
+
+.btn.equals {
+    grid-column: span 2; /* O botão '=' ocupa 2 colunas */
+}
+```
+
+### 3. Lógica JavaScript (script.js)
+
+Crie um arquivo chamado `script.js` na mesma pasta do `index.html`:
+
+```javascript
+document.addEventListener('DOMContentLoaded', () => {
+    const display = document.querySelector('.display');
+    const buttons = document.querySelectorAll('.btn');
+
+    let currentInput = '0'; // O que está atualmente no display
+    let previousInput = ''; // O primeiro operando em uma operação
+    let operator = null;    // O operador selecionado (+, -, *, /)
+    let waitingForSecondOperand = false; // Flag para saber se estamos esperando o segundo número
+
+    // Atualiza o display com o valor atual
+    function updateDisplay() {
+        display.value = currentInput;
+    }
+
+    // Reseta todos os valores
+    function clearAll() {
+        currentInput = '0';
+        previousInput = '';
+        operator = null;
+        waitingForSecondOperand = false;
+        updateDisplay();
+    }
+
+    // Lida com cliques nos números
+    function inputNumber(number) {
+        if (waitingForSecondOperand) {
+            currentInput = number;
+            waitingForSecondOperand = false;
+        } else {
+            // Evita múltiplos zeros no início ou adicionar '0' se já for '0'
+            currentInput = currentInput === '0' ? number : currentInput + number;
+        }
+        updateDisplay();
+    }
+
+    // Lida com o ponto decimal
+    function inputDecimal(dot) {
+        if (waitingForSecondOperand) {
+            currentInput = '0.';
+            waitingForSecondOperand = false;
+            updateDisplay();
+            return;
+        }
+        // Adiciona o ponto apenas se ele ainda não existir no número atual
+        if (!currentInput.includes(dot)) {
+            currentInput += dot;
+        }
+        updateDisplay();
+    }
+
+    // Lida com operadores
+    function handleOperator(nextOperator) {
+        const inputValue = parseFloat(currentInput);
+
+        if (operator && waitingForSecondOperand) {
+            operator = nextOperator;
+            return; // Se um operador já foi selecionado e estamos esperando o segundo operando, apenas mude o operador
+        }
+
+        if (previousInput === '') {
+            previousInput = inputValue;
+        } else if (operator) {
+            // Se já temos um operador e um número anterior, calcule o resultado intermediário
+            const result = calculate(previousInput, inputValue, operator);
+            currentInput = String(result);
+            previousInput = result;
+        }
+
+        waitingForSecondOperand = true;
+        operator = nextOperator;
+        updateDisplay(); // Opcional: para mostrar o resultado intermediário ou apenas o número anterior
+    }
+
+    // Realiza o cálculo
+    function calculate(firstOperand, secondOperand, op) {
+        if (op === '+') return firstOperand + secondOperand;
+        if (op === '-') return firstOperand - secondOperand;
+        if (op === '×') return firstOperand * secondOperand;
+        if (op === '÷') {
+            if (secondOperand === 0) {
+                return 'Erro'; // Evita divisão por zero
+            }
+            return firstOperand / secondOperand;
+        }
+        return secondOperand; // Caso não haja operador válido
+    }
+
+    // Lida com o botão de apagar (DEL)
+    function backspace() {
+        if (currentInput.length > 1) {
+            currentInput = currentInput.slice(0, -1);
+        } else {
+            currentInput = '0';
+        }
+        updateDisplay();
+    }
+
+    // Adiciona event listeners a todos os botões
+    buttons.forEach(button => {
+        button.addEventListener('click', (event) => {
+            const { classList, textContent } = event.target;
+
+            if (classList.contains('number')) {
+                inputNumber(textContent);
+            } else if (classList.contains('operator')) {
+                handleOperator(textContent);
+            } else if (classList.contains('decimal')) {
+                inputDecimal(textContent);
+            } else if (classList.contains('clear')) {
+                clearAll();
+            } else if (classList.contains('equals')) {
+                // Ao clicar em '=', force o cálculo se houver um operador e um número anterior
+                if (operator && previousInput !== '') {
+                    const inputValue = parseFloat(currentInput);
+                    const result = calculate(previousInput, inputValue, operator);
+                    currentInput = String(result);
+                    previousInput = ''; // Limpa o operando anterior
+                    operator = null;    // Limpa o operador
+                    waitingForSecondOperand = true; // Prepara para nova operação após o resultado
+                    updateDisplay();
+                }
+            } else if (classList.contains('backspace')) {
+                backspace();
+            }
+        });
+    });
+
+    // Inicializa o display
+    updateDisplay();
+});
+```
+
+### Como usar:
+
+1.  Salve os três arquivos (`index.html`, `style.css`, `script.js`) na **mesma pasta**.
+2.  Abra o arquivo `index.html` no seu navegador.
+
+Você terá uma calculadora funcional com um visual moderno!
+
+**Recursos e Lógica Explicados:**
+
+*   **HTML:** Define a estrutura da calculadora: um `input` para o display e vários `button`s organizados em um `div.buttons`.
+*   **CSS:** Estiliza a calculadora para torná-la visualmente agradável:
+    *   Centraliza a calculadora na página.
+    *   Define cores de fundo, bordas arredondadas e sombras.
+    *   Usa `display: grid` para organizar os botões em uma grade 4x4, com `gap` para espaçamento.
+    *   Botões especiais (0, AC, =) usam `grid-column: span X` para ocupar mais de uma coluna.
+    *   Adiciona efeitos de `hover` e `active` para melhorar a experiência do usuário.
+*   **JavaScript:** A "inteligência" da calculadora:
+    *   **Variáveis de Estado:**
+        *   `currentInput`: O número que o usuário está digitando ou o resultado atual.
+        *   `previousInput`: O primeiro número de uma operação (ex: em `5 + 3`, `5` seria `previousInput`).
+        *   `operator`: O operador matemático (+, -, ×, ÷) selecionado.
+        *   `waitingForSecondOperand`: Uma flag para saber se o usuário já digitou o primeiro número e um operador, e está esperando o segundo número.
+    *   **Funções Principais:**
+        *   `updateDisplay()`: Atualiza o valor do `input` do display.
+        *   `clearAll()`: Reseta todos os estados da calculadora.
+        *   `inputNumber()`: Lida com a digitação de números e evita múltiplos zeros no início.
+        *   `inputDecimal()`: Adiciona o ponto decimal, garantindo que não haja mais de um ponto.
+        *   `handleOperator()`: Gerencia a seleção de operadores, incluindo o encadeamento de operações (ex: `5 + 3 + 2`).
+        *   `calculate()`: Realiza a operação matemática real com base nos operandos e no operador.
+        *   `backspace()`: Remove o último caractere do `currentInput`.
+    *   **Event Listeners:** Escutam os cliques em cada botão e chamam a função apropriada com base na classe ou conteúdo do botão.
+
+Esta é uma calculadora funcional e com um bom ponto de partida para adicionar mais funcionalidades se desejar (como porcentagem, raiz quadrada, etc.).
