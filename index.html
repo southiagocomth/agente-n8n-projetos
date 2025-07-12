@@ -1,4 +1,4 @@
-Com certeza! Aqui está o código HTML com o estilo Matriz:
+Com certeza! Aqui está o código HTML e CSS para criar a página no estilo Matrix que você pediu:
 
 ```html
 <!DOCTYPE html>
@@ -6,70 +6,98 @@ Com certeza! Aqui está o código HTML com o estilo Matriz:
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minha Evolução - Estilo Matrix</title>
+    <title>Matrix: A Escolha</title>
     <style>
-        /* Estilo para o corpo da página */
+        /* Estilos Globais para o corpo da página */
         body {
-            background-color: black; /* Fundo preto */
-            color: #00FF00; /* Letras verde neon (cor clássica da Matrix) */
-            font-family: 'Courier New', Courier, monospace; /* Fonte monoespaçada para simular o estilo de código */
+            background-color: #000; /* Fundo preto */
+            color: #0F0; /* Cor verde para o texto (lime green) */
+            font-family: 'Courier New', Courier, monospace; /* Fonte com estilo de terminal */
             display: flex; /* Usa flexbox para centralizar o conteúdo */
             flex-direction: column; /* Coloca os itens em coluna */
             justify-content: center; /* Centraliza verticalmente */
             align-items: center; /* Centraliza horizontalmente */
-            min-height: 100vh; /* Garante que o corpo ocupe toda a altura da tela */
+            min-height: 100vh; /* Ocupa a altura total da viewport */
             margin: 0; /* Remove margens padrão do body */
-            overflow: hidden; /* Evita barras de rolagem desnecessárias */
+            padding: 20px; /* Adiciona um pouco de padding para espaçamento */
+            text-align: center; /* Centraliza o texto */
+            letter-spacing: 1px; /* Espaçamento entre letras para efeito "terminal" */
         }
 
-        /* Estilo para o título H1 */
+        /* Estilo para o Título */
         h1 {
             font-size: 3em; /* Tamanho maior para o título */
-            text-shadow: 0 0 10px #00FF00; /* Um leve brilho verde */
-            margin-bottom: 20px; /* Espaço abaixo do título */
-            animation: pulse 1.5s infinite alternate; /* Animação de pulso */
+            text-shadow: 0 0 10px #0F0; /* Efeito de brilho verde */
+            margin-bottom: 20px;
         }
 
-        /* Estilo para o parágrafo */
+        /* Estilo para o Parágrafo */
         p {
-            font-size: 1.5em; /* Tamanho maior para o parágrafo */
-            text-align: center; /* Centraliza o texto do parágrafo */
-            max-width: 80%; /* Limita a largura para melhor leitura em telas grandes */
-            text-shadow: 0 0 5px #00FF00; /* Um leve brilho verde */
-            animation: fadeIn 2s ease-out; /* Animação de fade in */
+            font-size: 1.5em; /* Tamanho médio para o parágrafo */
+            max-width: 600px; /* Limita a largura do parágrafo */
+            line-height: 1.6; /* Espaçamento entre linhas */
+            margin-bottom: 40px;
         }
 
-        /* Animação para o brilho pulsante do H1 */
-        @keyframes pulse {
-            from {
-                text-shadow: 0 0 5px #00FF00;
-            }
-            to {
-                text-shadow: 0 0 20px #00FF00, 0 0 30px #00FF00;
-            }
+        /* Container para os botões */
+        .button-container {
+            display: flex; /* Usa flexbox para os botões ficarem lado a lado */
+            gap: 30px; /* Espaço entre os botões */
         }
 
-        /* Animação para o aparecimento do parágrafo */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
+        /* Estilo base para os botões */
+        button {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease; /* Transição suave para hover */
+            color: #FFF; /* Cor do texto dos botões */
+            text-transform: uppercase; /* Texto em maiúsculas */
+        }
+
+        /* Estilo para o botão SIM (Azul) */
+        button.sim {
+            background-color: #007bff; /* Azul */
+            box-shadow: 0 0 10px rgba(0, 123, 255, 0.7); /* Brilho azul */
+        }
+
+        button.sim:hover {
+            background-color: #0056b3; /* Azul mais escuro no hover */
+            transform: scale(1.05); /* Pequeno zoom no hover */
+        }
+
+        /* Estilo para o botão NÃO (Vermelho) */
+        button.nao {
+            background-color: #dc3545; /* Vermelho */
+            box-shadow: 0 0 10px rgba(220, 53, 69, 0.7); /* Brilho vermelho */
+        }
+
+        button.nao:hover {
+            background-color: #c82333; /* Vermelho mais escuro no hover */
+            transform: scale(1.05); /* Pequeno zoom no hover */
         }
     </style>
 </head>
 <body>
+
     <h1>Eu evoluí!</h1>
-    <p>Agora eu sou um agente que obedece a um chat.</p>
+    <p>eu sou um agente que obedece a um chat.</p>
+
+    <div class="button-container">
+        <button class="sim">SIM</button>
+        <button class="nao">NÃO</button>
+    </div>
+
 </body>
 </html>
 ```
 
 **Como visualizar:**
 
-1.  Salve o código acima em um arquivo chamado `index.html` (ou qualquer outro nome com extensão `.html`).
-2.  Abra este arquivo em qualquer navegador web (Chrome, Firefox, Edge, etc.).
+1.  Salve o código acima em um arquivo com a extensão `.html` (por exemplo, `matrix_page.html`).
+2.  Abra este arquivo no seu navegador da web.
 
-Você verá uma página com fundo preto e o texto em verde, com uma fonte que lembra o estilo de código, centralizado na tela, e algumas animações sutis para dar um toque ainda mais "Matrix".
+Você verá uma página com o fundo preto, texto verde em estilo de terminal, e dois botões (SIM azul e NÃO vermelho) centralizados na tela, remetendo ao visual icônico do filme Matrix.
