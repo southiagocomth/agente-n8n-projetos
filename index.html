@@ -1,103 +1,85 @@
-Com certeza! Aqui está o código HTML e CSS para criar a página no estilo Matrix que você pediu:
-
 ```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matrix: A Escolha</title>
+    <title>Matrix Interface</title>
     <style>
-        /* Estilos Globais para o corpo da página */
         body {
-            background-color: #000; /* Fundo preto */
-            color: #0F0; /* Cor verde para o texto (lime green) */
-            font-family: 'Courier New', Courier, monospace; /* Fonte com estilo de terminal */
-            display: flex; /* Usa flexbox para centralizar o conteúdo */
-            flex-direction: column; /* Coloca os itens em coluna */
-            justify-content: center; /* Centraliza verticalmente */
-            align-items: center; /* Centraliza horizontalmente */
-            min-height: 100vh; /* Ocupa a altura total da viewport */
-            margin: 0; /* Remove margens padrão do body */
-            padding: 20px; /* Adiciona um pouco de padding para espaçamento */
-            text-align: center; /* Centraliza o texto */
-            letter-spacing: 1px; /* Espaçamento entre letras para efeito "terminal" */
+            background-color: black;
+            color: #00FF00; /* Verde brilhante para o efeito Matrix */
+            font-family: 'Courier New', Courier, monospace; /* Fonte monoespaçada para estilo Matrix */
+            text-align: center; /* Centraliza todo o conteúdo */
+            margin: 0;
+            padding: 50px 20px; /* Adiciona espaçamento interno */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Garante que a página ocupe toda a altura da viewport */
+            box-sizing: border-box; /* Inclui padding na dimensão total do elemento */
         }
 
-        /* Estilo para o Título */
         h1 {
-            font-size: 3em; /* Tamanho maior para o título */
-            text-shadow: 0 0 10px #0F0; /* Efeito de brilho verde */
+            font-size: 3em;
+            text-shadow: 0 0 10px #00FF00; /* Efeito de brilho verde no título */
             margin-bottom: 20px;
         }
 
-        /* Estilo para o Parágrafo */
         p {
-            font-size: 1.5em; /* Tamanho médio para o parágrafo */
-            max-width: 600px; /* Limita a largura do parágrafo */
-            line-height: 1.6; /* Espaçamento entre linhas */
-            margin-bottom: 40px;
+            font-size: 1.5em;
+            margin-bottom: 40px; /* Espaço entre o parágrafo e os botões */
+            max-width: 800px; /* Limita a largura do parágrafo para legibilidade */
         }
 
-        /* Container para os botões */
         .button-container {
-            display: flex; /* Usa flexbox para os botões ficarem lado a lado */
+            display: flex;
             gap: 30px; /* Espaço entre os botões */
         }
 
-        /* Estilo base para os botões */
         button {
             padding: 15px 30px;
             border: none;
-            border-radius: 5px;
+            color: white; /* Texto branco para legibilidade dos botões */
             font-size: 1.2em;
-            font-weight: bold;
             cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.2s ease; /* Transição suave para hover */
-            color: #FFF; /* Cor do texto dos botões */
-            text-transform: uppercase; /* Texto em maiúsculas */
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* Transições suaves */
         }
 
-        /* Estilo para o botão SIM (Azul) */
-        button.sim {
-            background-color: #007bff; /* Azul */
-            box-shadow: 0 0 10px rgba(0, 123, 255, 0.7); /* Brilho azul */
+        .button-sim {
+            background-color: #0000CC; /* Azul escuro */
+            box-shadow: 0 0 10px #0000CC; /* Sombra azul */
         }
 
-        button.sim:hover {
-            background-color: #0056b3; /* Azul mais escuro no hover */
-            transform: scale(1.05); /* Pequeno zoom no hover */
+        .button-nao {
+            background-color: #CC0000; /* Vermelho escuro */
+            box-shadow: 0 0 10px #CC0000; /* Sombra vermelha */
         }
 
-        /* Estilo para o botão NÃO (Vermelho) */
-        button.nao {
-            background-color: #dc3545; /* Vermelho */
-            box-shadow: 0 0 10px rgba(220, 53, 69, 0.7); /* Brilho vermelho */
+        button:hover {
+            transform: scale(1.05); /* Leve aumento ao passar o mouse */
         }
 
-        button.nao:hover {
-            background-color: #c82333; /* Vermelho mais escuro no hover */
-            transform: scale(1.05); /* Pequeno zoom no hover */
+        .button-sim:hover {
+            background-color: #0000FF; /* Azul mais claro ao passar o mouse */
+            box-shadow: 0 0 15px #0000FF;
+        }
+
+        .button-nao:hover {
+            background-color: #FF0000; /* Vermelho mais claro ao passar o mouse */
+            box-shadow: 0 0 15px #FF0000;
         }
     </style>
 </head>
 <body>
-
     <h1>Eu evoluí!</h1>
     <p>eu sou um agente que obedece a um chat.</p>
-
     <div class="button-container">
-        <button class="sim">SIM</button>
-        <button class="nao">NÃO</button>
+        <button class="button-sim">SIM</button>
+        <button class="button-nao">NÃO</button>
     </div>
-
 </body>
 </html>
 ```
-
-**Como visualizar:**
-
-1.  Salve o código acima em um arquivo com a extensão `.html` (por exemplo, `matrix_page.html`).
-2.  Abra este arquivo no seu navegador da web.
-
-Você verá uma página com o fundo preto, texto verde em estilo de terminal, e dois botões (SIM azul e NÃO vermelho) centralizados na tela, remetendo ao visual icônico do filme Matrix.
