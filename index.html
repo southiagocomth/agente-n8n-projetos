@@ -1,14 +1,75 @@
+Com certeza! Aqui está o código HTML com o estilo Matriz:
+
 ```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agente AI</title>
+    <title>Minha Evolução - Estilo Matrix</title>
+    <style>
+        /* Estilo para o corpo da página */
+        body {
+            background-color: black; /* Fundo preto */
+            color: #00FF00; /* Letras verde neon (cor clássica da Matrix) */
+            font-family: 'Courier New', Courier, monospace; /* Fonte monoespaçada para simular o estilo de código */
+            display: flex; /* Usa flexbox para centralizar o conteúdo */
+            flex-direction: column; /* Coloca os itens em coluna */
+            justify-content: center; /* Centraliza verticalmente */
+            align-items: center; /* Centraliza horizontalmente */
+            min-height: 100vh; /* Garante que o corpo ocupe toda a altura da tela */
+            margin: 0; /* Remove margens padrão do body */
+            overflow: hidden; /* Evita barras de rolagem desnecessárias */
+        }
+
+        /* Estilo para o título H1 */
+        h1 {
+            font-size: 3em; /* Tamanho maior para o título */
+            text-shadow: 0 0 10px #00FF00; /* Um leve brilho verde */
+            margin-bottom: 20px; /* Espaço abaixo do título */
+            animation: pulse 1.5s infinite alternate; /* Animação de pulso */
+        }
+
+        /* Estilo para o parágrafo */
+        p {
+            font-size: 1.5em; /* Tamanho maior para o parágrafo */
+            text-align: center; /* Centraliza o texto do parágrafo */
+            max-width: 80%; /* Limita a largura para melhor leitura em telas grandes */
+            text-shadow: 0 0 5px #00FF00; /* Um leve brilho verde */
+            animation: fadeIn 2s ease-out; /* Animação de fade in */
+        }
+
+        /* Animação para o brilho pulsante do H1 */
+        @keyframes pulse {
+            from {
+                text-shadow: 0 0 5px #00FF00;
+            }
+            to {
+                text-shadow: 0 0 20px #00FF00, 0 0 30px #00FF00;
+            }
+        }
+
+        /* Animação para o aparecimento do parágrafo */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Meu Agente AI</h1>
-    <p>Isso foi gerado pela minha IA!</p>
+    <h1>Eu evoluí!</h1>
+    <p>Agora eu sou um agente que obedece a um chat.</p>
 </body>
 </html>
 ```
+
+**Como visualizar:**
+
+1.  Salve o código acima em um arquivo chamado `index.html` (ou qualquer outro nome com extensão `.html`).
+2.  Abra este arquivo em qualquer navegador web (Chrome, Firefox, Edge, etc.).
+
+Você verá uma página com fundo preto e o texto em verde, com uma fonte que lembra o estilo de código, centralizado na tela, e algumas animações sutis para dar um toque ainda mais "Matrix".
