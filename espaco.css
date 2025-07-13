@@ -1,0 +1,21 @@
+body {
+    background-color: #05051a; /* Azul muito escuro, quase preto */
+    color: #ffffff; /* Texto branco */
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+h1 {
+    font-size: 3em;
+    text-align: center;
+}
+
+p {
+    font-size: 1.5em;
+    text-align: center;
+}
