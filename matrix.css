@@ -1,0 +1,25 @@
+body {
+    background-color: black;
+    color: #00FF00; /* Verde vibrante */
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px #00FF00, 0 0 20px #00CC00;
+}
+
+p {
+    font-size: 1.5em;
+    text-shadow: 0 0 8px #00FF00;
+}
