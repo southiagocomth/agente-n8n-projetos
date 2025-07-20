@@ -1,0 +1,264 @@
+/* Reset Básico e Fontes */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Share Tech Mono', monospace;
+    background-color: #000000;
+    color: #00ff00; /* Cor padrão do texto - Matrix Green */
+    line-height: 1.6;
+    text-shadow: 0 0 5px #00ff00; /* Efeito de brilho */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Efeitos de brilho para elementos específicos */
+.code-glow {
+    text-shadow: 0 0 8px #00ff00, 0 0 15px #00ff00;
+    animation: neon-glow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes neon-glow {
+    from { text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00; }
+    to { text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00; }
+}
+
+/* Cabeçalho */
+header {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px 0;
+    border-bottom: 2px solid #00ff00;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3em;
+    color: #00ff00;
+    text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+}
+
+header p {
+    margin-top: 5px;
+    font-size: 1.1em;
+    color: #00e600;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0 0;
+    display: flex;
+    justify-content: center;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: #00ff00;
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 5px 10px;
+    border: 1px solid #00ff00;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 5px #00ff00;
+}
+
+header nav ul li a:hover {
+    background-color: #00ff00;
+    color: #000000;
+    text-shadow: none;
+    box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
+}
+
+/* Seções Principais */
+section {
+    padding: 60px 0;
+    text-align: center;
+    border-bottom: 1px dashed #004d00;
+}
+
+section:last-of-type {
+    border-bottom: none;
+}
+
+h2 {
+    font-size: 2.5em;
+    color: #00ff00;
+    margin-bottom: 30px;
+    text-shadow: 0 0 8px #00ff00;
+}
+
+/* Seção Hero */
+.hero-section {
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://source.unsplash.com/random/1200x600/?matrix'); /* Imagem aleatória de matriz */
+    background-size: cover;
+    background-position: center;
+    color: #00ff00;
+    padding: 100px 0;
+}
+
+.hero-section p {
+    font-size: 1.3em;
+    margin-bottom: 40px;
+}
+
+/* Botão Genérico */
+.btn {
+    display: inline-block;
+    background-color: transparent;
+    color: #00ff00;
+    border: 2px solid #00ff00;
+    padding: 12px 25px;
+    text-decoration: none;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 5px #00ff00;
+}
+
+.btn:hover {
+    background-color: #00ff00;
+    color: #000000;
+    text-shadow: none;
+    box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+}
+
+/* Menu de Pizzas */
+.pizza-menu .menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.menu-item {
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 1px solid #00ff00;
+    padding: 25px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+    transition: transform 0.3s ease;
+}
+
+.menu-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px #00ff00, 0 0 25px #00ff00;
+}
+
+.menu-item h3 {
+    color: #00ff00;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    text-shadow: 0 0 5px #00ff00;
+}
+
+.menu-item p {
+    color: #00e600;
+    font-size: 0.95em;
+    margin-bottom: 15px;
+}
+
+.menu-item span {
+    display: block;
+    font-size: 1.5em;
+    color: #33ff33;
+    font-weight: bold;
+    text-shadow: 0 0 5px #33ff33;
+}
+
+/* Formulário de Pedido */
+.order-section form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 30px;
+    border: 1px solid #00ff00;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}
+
+.order-section label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1.1em;
+    color: #00ff00;
+    text-shadow: 0 0 3px #00ff00;
+}
+
+.order-section input[type="text"],
+.order-section input[type="number"],
+.order-section select,
+.order-section textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: #000000;
+    border: 1px solid #00ff00;
+    color: #00ff00;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 1em;
+    box-shadow: inset 0 0 5px #00ff00;
+}
+
+.order-section input:focus,
+.order-section select:focus,
+.order-section textarea:focus {
+    outline: none;
+    border-color: #33ff33;
+    box-shadow: inset 0 0 8px #33ff33, 0 0 8px #33ff33;
+}
+
+.order-section textarea {
+    resize: vertical;
+}
+
+.order-section .btn {
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* Seção de Contato */
+.contact-section p {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    color: #00e600;
+}
+
+.contact-section a {
+    color: #00ff00;
+    text-decoration: none;
+    text-shadow: 0 0 5px #00ff00;
+    transition: color 0.3s ease;
+}
+
+.contact-section a:hover {
+    color: #33ff33;
+    text-shadow: 0 0 8px #33ff33;
+}
+
+/* Rodapé */
+footer {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px 0;
+    border-top: 2px solid #00ff00;
+    text-align: center;
+    font-size: 0.9em;
+    color: #00e600;
+}
+
+footer .ascii-art {
+    color: #00cc00;
+    font-size: 1em;
+    margin-top: 15px;
+    line-height: 0.9;
+    text-shadow: 0 0 3px #00cc00;
+}
